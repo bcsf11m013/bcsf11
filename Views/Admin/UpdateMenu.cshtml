@@ -1,0 +1,79 @@
+﻿@model BCSF11M013.Models.Product
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="~/Contents/bootstrap.css" rel="stylesheet" />
+    <link href="~/Contents/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body class="back" style="background-image:url(/Images/background.jpg)">
+<nav class="navbar navbar-inverse">
+            <img src="~/Images/logo.png" />
+        <div class="pull-right">
+            <ul class="nav nav-pills ">
+                <li role="presentation">@Html.ActionLink("Home", "Index","Home")</li>
+                <li role="presentation">@Html.ActionLink("Register", "Register","Home")</li>
+                <li role="presentation">@Html.ActionLink("Login", "login","Home")</li>
+                <li role="presentation">@Html.ActionLink("About Us", "Aboutus","Home")</li>
+                <li role="presentation">@Html.ActionLink("Contact us", "Contact","Home")</li>
+            </ul>
+        </div>
+        </nav>
+     <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" style="font-style:oblique;color:white;background-color:lightseagreen">Admin Panel</a>
+            </div>
+        <div class="pull-right">
+            <ul class="nav nav-pills ">
+                <li role="presentation">@Html.ActionLink("Add Product", "add","Admin")</li>
+                <li role="presentation">@Html.ActionLink("View Products", "viewAll","Admin")</li>
+               
+            </ul>
+        </div>
+        </nav>
+
+     <div class="reg-set">
+        <nav class="nav navbar-inverse">
+            <div class="navbar-header">
+                <h2 class="navbar-brand">Add New Product</h2>
+            </div>
+        </nav>
+        <br />
+                  
+   <div class="inner-set">
+            <form class="form" action="/Admin/UpdateProduct/@Model.Id" method="post">
+                <label>Product Title :</label>
+                <input type="text" name="Title" value="@Model.Title" class="form-control"/> <br />
+                <label>Category :</label>
+                <select name="Category">
+                    <option value="@Model.Category.Name">@Model.Category.Name</option>
+                    <option value="Laptops">Laptop</option>
+                    <option value="Mobile Phones">Mobile Phone</option>
+                    <option value="Cameras">Camera</option>
+                    <option value="Computer Accessories">Computer Accessories</option>
+                </select>
+                <br />
+                <br />
+                <label>Brand:</label>
+                <input type="text" name="Brand" value="@Model.Brand.Name" class="form-control"/>
+                <br />
+                <label>Price :</label>
+                <input type="text" name="Price" value="@Model.Price" class="form-control"/>
+                <br />
+                <label>Specification :</label>
+                <input type="text" name="Specification" value="@Model.Specification" class="form-control"/>
+                <br />
+                <div class="vertical-center">
+                    <input type="submit" value="Update" class= "btn btn-primary"/>
+                </div>
+            </form>
+            <br />
+        </div>
+    </div>
+
+    </body>
+    </html>

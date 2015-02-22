@@ -1,0 +1,105 @@
+﻿@model BCSF11M013.Models.custmer
+<!DOCTYPE html>
+
+@{
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+
+<script src="~/Scripts/jquery.validate.js"></script>
+
+<html>
+<body class="back" style="background-image:url(/Images/background.jpg)">
+  >  <div class="reg-set" style="background-color:white">
+        <nav class="nav navbar-inverse">
+            <div class="navbar-header">
+                <h2 class="navbar-brand">New Member Registeration</h2>
+            </div>
+        </nav>
+        <br />
+       <div class="inner-set">
+
+            @using (Html.BeginForm("signup", "Home", FormMethod.Post))
+            {
+                            <div class="col-md-9" style="margin-left:60px">
+                            <table>
+                                
+                                    
+
+                            <tr>
+                                <td>@Html.Label("First Name", new { @class = "col-md-4", style = "font-size:large;margin-top:20px" })</td>
+                                <td>@Html.TextBoxFor(model => model.fname, new { name = "fname", id = "n" }) <br />
+                                    @Html.ValidationMessageFor(m => m.fname)</td>
+                            </tr>
+                            <tr>
+
+                                <td>@Html.Label("Last Name", new { @class = "col-md-4", style = "font-size:large;margin-top:20px" }) </td>
+                                <td>@Html.TextBoxFor(model => model.lname, new { name = "lname", id = "n" })<br />
+                                    @Html.ValidationMessageFor(m => m.lname)
+                                </td>
+
+                             </tr>
+                                <tr>
+                                <td>@Html.Label("UserName", new { @class = "col-md-4", style = "font-size:large;margin-top:20px" }) </td>
+
+                               @* <td>@Html.TextBoxFor(model => model.username, new { name = "n", id = "n" })<br />*@
+                                    <td><input type="text" name="abc" id="abc" />
+                                    @Html.ValidationMessageFor(m => m.username)
+                                     <input type="button" id="b1" value="Check" /><div id="result"></div>
+                                </td>
+
+                                </tr>
+
+                                    
+                                  <tr><td>
+                                      @Html.Label("Email", new { @class = "col-md-4", style = "font-size:large;margin-top:20px" }) </td>
+                                        
+                                    <td>@Html.TextBoxFor(model => model.email, new { name = "em" }) <br />
+                                        @Html.ValidationMessageFor(m => m.email)
+                                    </td></tr>
+
+                                <tr> 
+                                    <td>@Html.Label("Password", new { @class = "col-md-4", style = "font-size:large;margin-top:20px" }) </td>
+                                    <td>@Html.TextBoxFor(model => model.passwd, new { name = "p" }) <br /> 
+                                       @Html.ValidationMessageFor(m => m.passwd) 
+                                   </td></tr>
+                            </table>
+                                <br />
+                                <br />
+                                <button type="submit" class="btn btn-primary" style="margin-left:100px">Sign up</button>
+                                </div>
+                             
+
+            }
+                    </div>
+                                    </div>
+                            
+								<!-- Personal Information Ends -->
+    <script>
+
+        $(document).ready(function () {
+
+            //  $('#checking').hide();
+
+            $('#b1').click(function () {
+
+                var userName = $('#abc').val();
+
+                //alert('User Name ='+ userName);
+                //$('#checking').show();
+                $.getJSON("/home/CheckUserName?abc=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User already exists in database");
+
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+    </body>
+    </html>

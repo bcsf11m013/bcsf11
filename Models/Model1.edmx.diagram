@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a73bb804c0e44c4a9265832dbe357c12" Name="Diagram1">
+        <EntityTypeShape EntityType="EStoreDBModel.Brand" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EStoreDBModel.Category" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EStoreDBModel.custmer" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EStoreDBModel.Product" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EStoreDBModel.user" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="EStoreDBModel.FK_B_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="EStoreDBModel.FK_P_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="EStoreDBModel.FK_P_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="EStoreDBModel.FK_Product_cstmr" ManuallyRouted="false" />
+        <AssociationConnector Association="EStoreDBModel.FK_Product_user" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

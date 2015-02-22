@@ -1,0 +1,40 @@
+﻿@model BCSF11M013.Models.Product
+<!DOCTYPE html>
+
+@{
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+
+
+<input type="text" id="range1" name="range1"/>
+ <input type="button" id="b1" class="btn btn-warning" />
+
+<div id="1234">
+</div>
+
+ <script>
+     $('document').ready(function () {
+         $('#b1').click(function () {
+             var Price = $('#range1').val();
+             $.getJSON("CheckproductRange?range1=" + Price, function (data) {
+                 jQuery.parseJSON(data);
+                 if (data) {
+                     @*$('#1234').append("<h4 >Price : Rs " + data+"</h5>");*@
+                    $.each(data, function (index) {
+
+
+                        $('#1234').append("<h4 >Price : Rs " + data[index].Title + "</h4><h5>Name : " + data[index] + "</h5>" );
+                       
+                    });
+
+                }
+                else {
+   
+                    $('#1234').append("<h4 >No entry Matched</h4>");
+                }
+            });
+
+        });
+
+     });
+</script>

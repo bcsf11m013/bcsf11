@@ -1,0 +1,29 @@
+ .vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.back1 {
+	background-color: grey;
+}
+.back {
+background-image: url("background.jpg");
+padding-left: 100px;
+padding-right: 100px;
+}
+.reg-set {
+background-color: white;
+margin-left: 240px;
+margin-right:240px;
+}
+.inner-set {
+padding-left: 50px;
+padding-right: 50px;
+}
+.abt-set {
+color: red;
+}
+.logo-center {
+align-items: center;
+}

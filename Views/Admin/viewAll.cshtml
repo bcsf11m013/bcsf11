@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="~/Contents/bootstrap.css" rel="stylesheet" />
+    <link href="~/Contents/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body class="back" style="background-image:url(/Images/background.jpg)">
+    <nav class="navbar navbar-inverse">
+            <img src="~/Images/logo.png" />
+        <div class="pull-right">
+            <ul class="nav nav-pills ">
+                <li role="presentation">@Html.ActionLink("Home", "Index","Home")</li>
+                <li role="presentation">@Html.ActionLink("Register", "Register","Home")</li>
+                <li role="presentation">@Html.ActionLink("Login", "login","Home")</li>
+                <li role="presentation">@Html.ActionLink("About Us", "Aboutus","Home")</li>
+                <li role="presentation">@Html.ActionLink("Contact us", "Contact","Home")</li>
+            </ul>
+        </div>
+        </nav>
+     <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" style="font-style:oblique;color:white;background-color:lightseagreen">Admin Panel</a>
+            </div>
+        <div class="pull-right">
+            <ul class="nav nav-pills ">
+                <li role="presentation">@Html.ActionLink("Add Product", "add","Admin")</li>
+                <li role="presentation">@Html.ActionLink("View Products", "viewAll","Admin")</li>
+               
+            </ul>
+        </div>
+        </nav>
+  
+		<!-- Box -->
+		<div class="box col-md-12 " style="background-color:white">
+            <nav class="nav navbar-inverse">
+                <div class="navbar-header">
+                    <h1 class="navbar-brand" style="margin-left:450px">ALL PRODUCTS</h1>
+                    <div class="pull-right" style="margin-left:250px">
+                        <br />z
+                        <input type="text" />
+                        <button>@Html.ActionLink("Search", "Search","Admin")</button>
+                    </div>
+                </div>
+            </nav>
+            <br />
+            <table>
+                <tr>
+                    <td><h2>ID</h2></td>
+                    <td><h2 style="margin-left:50px">Title</h2></td>
+                    <td><h2 style="margin-left:300px">Price</h2></td>
+                    <td><h2 style="margin-left:100px">Specification</h2></td>
+                    <td><h2 style="margin-left:100px">Image</h2></td>
+                </tr>
+
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td><h4>@c.Id</h4></td>
+                        <td><h4 style="margin-left:50px">@c.Title</h4></td>
+                        <td><h4 style="margin-left:300px">@c.Price</h4></td>
+                        <td><h4 style="margin-left:100px">@c.Specification</h4></td>
+                        <td><img src ="@c.Image" style="height:80px;width:50px;margin-left:100px"/></td>
+                        <td><a href="/Admin/Delete/@c.Id" style="margin-left:50px">Delete</a></td>
+                        <td><a href="/Admin/UpdateMenu/@c.Id" style="margin-left:10px">Update</a></td>
+                    </tr>
+                    <tr><td><br /></td> </tr>
+                }
+            </table>
+        </div>
+        
+
+
+    </body>
+    </html>
+
+

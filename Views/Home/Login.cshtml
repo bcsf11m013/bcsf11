@@ -1,0 +1,42 @@
+﻿@model BCSF11M013.Models.user
+@{
+    ViewBag.Title = "Login";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<html>
+<body  class="back" style="background-image:url(/Images/background.jpg)">
+   <div class="vertical-center" style="background-color:white"> 
+    @using (Html.BeginForm("LoginUser", "Home", FormMethod.Post))
+                        {
+                            <div class="col-md-6" style="margin-left:60px">
+                            <table>
+                                
+                                    
+                            <tr><td>@Html.Label("Name", new { @class = "col-md-2", style = "font-size:large;margin-top:20px" }) </td>
+                                        
+                                    <td>@Html.TextBoxFor(model => model.name, new { name="n"})</td></tr>
+                                    
+                                  
+                             <tr> <td>@Html.Label("Pasword", new { @class = "col-md-2", style = "font-size:large;margin-top:20px" }) </td>
+                                   <td>@Html.TextBoxFor(model => model.password, new { name="p"})</td></tr>
+                             
+                                       
+                        
+
+                                
+                            </table>
+                                <br />
+                                <br />
+                                <button type="submit" class="btn btn-primary" style="margin-left:100px">Login</button>
+                                </div>
+                             
+
+                        }
+       </div>
+</body>
+</html>
+

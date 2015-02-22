@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="~/Contents/bootstrap.css" rel="stylesheet" />
+    <link href="~/Contents/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    @*<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    @*<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</head>
+<body class="back" style="background-image:url(/Images/background.jpg)">
+    <nav class="navbar navbar-inverse">
+            <img src="/Images/logo.png" />
+        <div class="pull-right">
+            <ul class="nav nav-pills ">
+                <li role="presentation">@Html.ActionLink("Admin", "adminView","Admin")</li>
+                <li role="presentation">@Html.ActionLink("Home", "Index","Home")</li>
+                <li role="presentation">@Html.ActionLink("Register", "Register","Home")</li>
+                <li role="presentation">@Html.ActionLink("Login", "login","Home")</li>
+                <li role="presentation">@Html.ActionLink("About Us", "Aboutus","Home")</li>
+                <li role="presentation">@Html.ActionLink("Contact us", "Contact","Home")</li>
+            </ul>
+            @*<div class="pull-right">
+            <input type="text" id ="t1" name="t1" />
+            <button id="b1" class="btn btn-warning" >@Html.ActionLink("Search", "Search","Home")</button>
+                </div>*@
+          </div>
+        </nav>
+    </body>
+        @RenderBody();
